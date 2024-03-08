@@ -15,15 +15,13 @@ function toggleSidebarHide() {
 }
 
 function toggleSidebarShow() {
-    // Check if sidebar is currently visible
-    const isVisible = getComputedStyle(sidebar).display !== 'none';
+    // Show the sidebar
+    sidebar.style.display = 'block';
     
-    // If sidebar is visible, hide it; otherwise, show it
-    sidebar.style.display = isVisible ? 'none' : 'block';
-    
-    // Adjust content margin based on sidebar visibility
-    content.style.marginLeft = isVisible ? '0' : '250px';
+    // Adjust content margin to accommodate the sidebar
+    content.style.marginLeft = '250px';
 }
+
 
 // Event listener to toggle sidebar visibility when sidebar button is clicked
 document.getElementById('sidebarHide').addEventListener('click', toggleSidebarHide);
