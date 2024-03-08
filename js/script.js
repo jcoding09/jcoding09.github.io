@@ -3,7 +3,7 @@ const sidebar = document.querySelector('.sidebar');
 const content = document.querySelector('.content');
 
 // Function to toggle sidebar visibility
-function toggleSidebar() {
+function toggleSidebarHide() {
     // Check if sidebar is currently visible
     const isVisible = getComputedStyle(sidebar).display !== 'none';
     
@@ -14,8 +14,22 @@ function toggleSidebar() {
     content.style.marginLeft = isVisible ? '0' : '250px';
 }
 
+function toggleSidebarShow() {
+    // Check if sidebar is currently visible
+    const isVisible = getComputedStyle(sidebar).display === 'none';
+    
+    // If sidebar is visible, hide it; otherwise, show it
+    sidebar.style.display = isVisible ? 'none' : 'block';
+    
+    // Adjust content margin based on sidebar visibility
+    content.style.marginLeft = isVisible ? '0' : '250px';
+}
+
 // Event listener to toggle sidebar visibility when sidebar button is clicked
-document.getElementById('sidebarToggle').addEventListener('click', toggleSidebar);
+document.getElementById('sidebarHide').addEventListener('click', toggleSidebarHide);
+
+
+document.getElementById('sidebarShow').addEventListener('click', toggleSidebarShow);
 
 document.addEventListener("DOMContentLoaded", function() {
     // Get the content div
