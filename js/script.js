@@ -16,7 +16,7 @@ function toggleSidebarHide() {
 
 function toggleSidebarShow() {
     // Check if sidebar is currently visible
-    const isVisible = getComputedStyle(sidebar).display === 'none';
+    const isVisible = getComputedStyle(sidebar).display !== 'none';
     
     // If sidebar is visible, hide it; otherwise, show it
     sidebar.style.display = isVisible ? 'none' : 'block';
