@@ -2,16 +2,12 @@
 const sidebar = document.querySelector('.sidebar');
 const content = document.querySelector('.content');
 
-// Function to toggle sidebar visibility
 function toggleSidebarHide() {
-    // Check if sidebar is currently visible
-    const isVisible = getComputedStyle(sidebar).display !== 'none';
+    // Hide the sidebar
+    sidebar.style.display = 'none';
     
-    // If sidebar is visible, hide it; otherwise, show it
-    sidebar.style.display = isVisible ? 'none' : 'block';
-    
-    // Adjust content margin based on sidebar visibility
-    content.style.marginLeft = isVisible ? '0' : '250px';
+    // Adjust content margin to remove the space occupied by the sidebar
+    content.style.marginLeft = '0';
 }
 
 function toggleSidebarShow() {
