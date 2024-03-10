@@ -49,3 +49,27 @@
 .sidebar ul li a:hover {
   color: #007bff; /* Change link color on hover */
 }
+
+@font-face {
+  font-family: "Geist_mono";
+  src: url("../assets/font/Geist_mono.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Geist_variable";
+  src: url("../assets/font/Geist_variable.ttf") format("truetype");
+}
+
+body {
+  font-family: "Geist_mono", monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Geist_variable", sans-serif;
+}
