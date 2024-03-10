@@ -15,7 +15,7 @@ function toggleSidebarShow() {
   sidebar.style.display = "block";
 
   // Adjust content margin to accommodate the sidebar
-  content.style.marginLeft = "220px";
+  content.style.marginLeft = "250px";
 }
 
 // Event listener to toggle sidebar visibility when sidebar button is clicked
