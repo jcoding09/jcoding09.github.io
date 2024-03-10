@@ -1,40 +1,51 @@
 /* Style for sidebar */
 .sidebar {
-    width: 250px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #f4f4f4;
-    padding: 20px;
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f4f4f4;
+  padding: 20px;
 }
 
 /* Style for content */
 .content {
-    margin-left: 250px; /* Same as sidebar width */
-    padding: 20px;
+  margin-left: 250px; /* Same as sidebar width */
+  padding: 20px;
+}
+
+.container {
+  position: relative;
+}
+
+#sidebarShow,
+#sidebarHide {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 /* Style for sidebar heading */
 .sidebar h2 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /* Style for sidebar links */
 .sidebar ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .sidebar ul li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .sidebar ul li a {
-    text-decoration: none;
-    color: #333;
+  text-decoration: none;
+  color: #333;
 }
 
 .sidebar ul li a:hover {
-    color: #007bff; /* Change link color on hover */
+  color: #007bff; /* Change link color on hover */
 }
