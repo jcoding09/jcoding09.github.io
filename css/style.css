@@ -60,16 +60,17 @@
   src: url("../assets/font/Geist_variable.ttf") format("truetype");
 }
 
-body {
+/* body {
   font-family: "Geist_mono", monospace;
 }
-
+*/
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
+body, 
 p {
   font-family: "Geist_variable", sans-serif;
 }
