@@ -3,10 +3,384 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Topic 0 - Event Loop, Microtasks and Macrotasks Queue</title>
+    <title>
+      Topic 0 : Arrays, Arrow function, Object, Map, Filter, Reduce, Mutability and Immutability,
+      Destructuring
+    </title>
   </head>
   <body>
-    <h1>Topic 0: Event Loop, Microtasks and Macrotasks Queue</h1>
-    <p>Event loop</p>
+    <h1>
+      Topic 0: Arrays, Arrow function, Object, Map, Filter, Reduce, Mutability and Immutability,
+      Destructuring
+    </h1>
+    <h2>Arrays</h2>
+    <div class="markdown-container ltr"><div class="markdown-content"><p>Arrays in JavaScript are a fundamental data structure used to store multiple values in a single variable. They allow you to group together elements of the same type or different types and access them using indices. Here's a detailed explanation of arrays in JavaScript:</p>
+<ol>
+<li><p><strong>Declaration and Initialization:</strong>
+Arrays in JavaScript can be declared and initialized in several ways:</p>
+<pre><code class="lang-javascript hljs "><span class="hljs-comment">// Method 1: Using array literal</span>
+<span class="hljs-keyword">let</span> myArray = []; <span class="hljs-comment">// Empty array</span>
+<span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]; <span class="hljs-comment">// Array with elements</span>
+
+<span class="hljs-comment">// Method 2: Using the Array constructor</span>
+<span class="hljs-keyword">let</span> colors = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(); <span class="hljs-comment">// Empty array</span>
+<span class="hljs-keyword">let</span> fruits = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-string">"Apple"</span>, <span class="hljs-string">"Banana"</span>, <span class="hljs-string">"Orange"</span>); <span class="hljs-comment">// Array with elements</span>
+</code></pre>
+</li>
+<li><p><strong>Accessing Elements:</strong>
+Array elements are accessed using zero-based indices.</p>
+<pre><code class="lang-javascript hljs "><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"Apple"</span>, <span class="hljs-string">"Banana"</span>, <span class="hljs-string">"Orange"</span>];
+<span class="hljs-built_in">console</span>.log(fruits[<span class="hljs-number">0</span>]); <span class="hljs-comment">// Output: "Apple"</span>
+<span class="hljs-built_in">console</span>.log(fruits[<span class="hljs-number">1</span>]); <span class="hljs-comment">// Output: "Banana"</span>
+</code></pre>
+</li>
+<li><p><strong>Properties and Methods:</strong>
+Arrays in JavaScript come with various properties and methods to manipulate them:</p>
+<ul>
+<li><code>length</code>: Property that returns the number of elements in the array.</li>
+<li><code>push()</code>: Method to add one or more elements to the end of an array.</li>
+<li><code>pop()</code>: Method to remove the last element from an array and return it.</li>
+<li><code>shift()</code>: Method to remove the first element from an array and return it.</li>
+<li><code>unshift()</code>: Method to add one or more elements to the beginning of an array.</li>
+<li><code>splice()</code>: Method to add or remove elements from an array at a specific index.</li>
+</ul>
+</li>
+<li><p><strong>Dynamic Nature:</strong>
+Arrays in JavaScript are dynamic, meaning their size can change dynamically by adding or removing elements.</p>
+<pre><code class="lang-javascript hljs "><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">"Apple"</span>, <span class="hljs-string">"Banana"</span>, <span class="hljs-string">"Orange"</span>];
+fruits.push(<span class="hljs-string">"Mango"</span>); <span class="hljs-comment">// Add an element</span>
+fruits.pop(); <span class="hljs-comment">// Remove the last element</span>
+</code></pre>
+</li>
+<li><p><strong>Iteration:</strong>
+You can iterate over arrays using loops like <code>for</code> loop, <code>forEach()</code> method, <code>map()</code> method, etc.</p>
+<pre><code class="lang-javascript hljs "><span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; numbers.length; i++) {
+    <span class="hljs-built_in">console</span>.log(numbers[i]);
+}
+
+<span class="hljs-comment">// Using forEach method</span>
+numbers.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">number</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(number);
+});
+</code></pre>
+</li>
+<li><p><strong>Multidimensional Arrays:</strong>
+JavaScript arrays can contain other arrays, allowing you to create multidimensional arrays.</p>
+<pre><code class="lang-javascript hljs ">let matrix = [
+<span class="hljs-code">    [1, 2, 3],</span>
+<span class="hljs-code">    [4, 5, 6],</span>
+<span class="hljs-code">    [7, 8, 9]</span>
+];
+console.log(matrix[<span class="hljs-string">1</span>][<span class="hljs-symbol">2</span>]); // Output: 6
+</code></pre>
+</li>
+</ol>
+<p>Arrays are versatile and widely used in JavaScript for various purposes, such as storing collections of data, implementing data structures, and performing operations on collections. Understanding arrays is crucial for any JavaScript developer.</p>
+</div></div>
+<br>
+<br>
+<h2>Objects</h2>
+<div class="markdown-container ltr"><div class="markdown-content"><p>In JavaScript, objects are fundamental data structures used to store and organize data. They are collections of key-value pairs where each key is a unique identifier (often referred to as a property) associated with a value. Objects are versatile and can represent various entities, including real-world objects, abstract concepts, functions, and more. Here's a detailed breakdown of objects in JavaScript:</p>
+<ol>
+<li><p><strong>Key-Value Pairs</strong>: As mentioned, objects consist of key-value pairs. The key is always a string (or Symbol, introduced in ES6), and the value can be of any data type, including primitive types (like strings, numbers, booleans, etc.) or even other objects.</p>
+</li>
+<li><p><strong>Object Literals</strong>: One common way to create objects in JavaScript is by using object literals. This involves enclosing key-value pairs within curly braces <code>{}</code>, with each pair separated by a comma. Here's an example:</p>
+<pre><code class="lang-javascript hljs "> <span class="hljs-string">let</span> <span class="hljs-string">person</span> <span class="hljs-string">=</span> <span class="hljs-string">{</span>
+<span class="hljs-attr">     name:</span> <span class="hljs-string">"John"</span><span class="hljs-string">,</span>
+<span class="hljs-attr">     age:</span> <span class="hljs-number">30</span><span class="hljs-string">,</span>
+<span class="hljs-attr">     isEmployed:</span> <span class="hljs-literal">true</span>
+ <span class="hljs-string">};</span>
+</code></pre>
+</li>
+<li><p><strong>Accessing Properties</strong>: You can access properties of an object using either dot notation (<code>object.property</code>) or bracket notation (<code>object['property']</code>). Dot notation is more common and concise, but bracket notation is useful when dealing with dynamic property names or properties with special characters.</p>
+<pre><code class="lang-javascript hljs "> <span class="hljs-built_in">console</span>.log(person.name);  <span class="hljs-comment">// Output: "John"</span>
+ <span class="hljs-built_in">console</span>.log(person[<span class="hljs-string">'age'</span>]); <span class="hljs-comment">// Output: 30</span>
+</code></pre>
+</li>
+<li><p><strong>Adding and Modifying Properties</strong>: You can add new properties to an object or modify existing ones at any time by simply assigning values to them.</p>
+<pre><code class="lang-javascript hljs "> person.gender = <span class="hljs-string">"Male"</span>; <span class="hljs-comment">// Adding a new property</span>
+ person.age = <span class="hljs-number">31</span>;         <span class="hljs-comment">// Modifying an existing property</span>
+</code></pre>
+</li>
+<li><p><strong>Deleting Properties</strong>: You can remove properties from an object using the <code>delete</code> keyword.</p>
+<pre><code class="lang-javascript hljs "> <span class="hljs-keyword">delete</span> person.isEmployed;
+</code></pre>
+</li>
+<li><p><strong>Methods</strong>: In JavaScript, objects can also contain functions as values. These functions are called methods of the object.</p>
+<pre><code class="lang-javascript hljs "> <span class="hljs-keyword">let</span> person = {
+     <span class="hljs-attr">name</span>: <span class="hljs-string">"John"</span>,
+     <span class="hljs-attr">sayHello</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hello, my name is "</span> + <span class="hljs-keyword">this</span>.name);
+     }
+ };
+
+ person.sayHello(); <span class="hljs-comment">// Output: "Hello, my name is John"</span>
+</code></pre>
+</li>
+<li><p><strong>this Keyword</strong>: Within a method, the <code>this</code> keyword refers to the current object instance. It allows methods to access other properties or methods of the same object.</p>
+</li>
+<li><p><strong>Object Constructor</strong>: You can also create objects using constructor functions or ES6 classes.</p>
+<pre><code class="lang-javascript hljs "> <span class="hljs-comment">// Constructor function</span>
+ <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name, age</span>) </span>{
+     <span class="hljs-keyword">this</span>.name = name;
+     <span class="hljs-keyword">this</span>.age = age;
+ }
+
+ <span class="hljs-keyword">let</span> john = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"John"</span>, <span class="hljs-number">30</span>);
+
+ <span class="hljs-comment">// ES6 Class</span>
+ <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+     <span class="hljs-keyword">constructor</span>(name, age) {
+         <span class="hljs-keyword">this</span>.name = name;
+         <span class="hljs-keyword">this</span>.age = age;
+     }
+ }
+
+ <span class="hljs-keyword">let</span> john = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"John"</span>, <span class="hljs-number">30</span>);
+</code></pre>
+</li>
+<li><p><strong>Object Prototypes</strong>: In JavaScript, objects can inherit properties and methods from other objects through a mechanism called prototypes. Every JavaScript object has a prototype, which is either null or references another object. Prototypes allow for inheritance in JavaScript, enabling objects to share behavior and reduce redundancy.</p>
+</li>
+</ol>
+<p>These are the key concepts related to objects in JavaScript. Understanding these concepts is crucial for effectively working with data and creating complex applications in JavaScript.</p>
+</div></div>
+<br>
+<br>
+<h2>Arrow functions</h2>
+<div class="markdown-container ltr"><div class="markdown-content"><p>Arrow functions are a concise way to write anonymous function expressions in JavaScript. They were introduced in ECMAScript 6 (ES6) and provide a more succinct syntax compared to traditional function expressions. Here's an explanation of arrow functions with details:</p>
+<ol>
+<li><p><strong>Syntax</strong>:
+Arrow functions have a compact syntax compared to regular function expressions. The basic syntax is:</p>
+<pre><code class="lang-javascript hljs ">(parameters) =&gt; { statements }
+</code></pre>
+<p>If the function has only one parameter and a single statement, the parentheses around the parameter and curly braces around the statement can be omitted:</p>
+<pre><code class="lang-javascript hljs ">parameter =&gt; expression
+</code></pre>
+</li>
+<li><p><strong>Lexical <code>this</code> Binding</strong>:
+One of the most significant differences between arrow functions and traditional functions is how they handle the <code>this</code> keyword. Arrow functions do not have their own <code>this</code> context. Instead, they inherit <code>this</code> from the surrounding code (lexical scoping). This behavior can be very useful in situations where <code>this</code> might change context in traditional functions, such as when dealing with event handlers or callbacks.</p>
+</li>
+<li><p><strong>No <code>arguments</code> object</strong>:
+Unlike traditional functions, arrow functions do not have their own <code>arguments</code> object. If you need to access the arguments passed to an arrow function, you can use the rest parameter syntax (<code>...args</code>) or access the <code>arguments</code> object from the surrounding scope.</p>
+</li>
+<li><p><strong>No <code>new</code> keyword</strong>:
+Arrow functions cannot be used as constructors and cannot be called with the <code>new</code> keyword. Attempting to do so will result in a runtime error.</p>
+</li>
+<li><p><strong>Implicit return</strong>:
+If the arrow function body consists of a single expression, that expression will be implicitly returned. This allows for more concise code. If the function body requires multiple statements, you need to use explicit return.</p>
+</li>
+<li><p><strong>Use Cases</strong>:</p>
+<ul>
+<li>Callback functions: Arrow functions are often used as concise callbacks in array methods like <code>map</code>, <code>filter</code>, and <code>reduce</code>.</li>
+<li>Shorter syntax: They provide a shorter syntax for defining small, inline functions.</li>
+<li>Avoiding <code>this</code> confusion: Arrow functions can be beneficial in situations where you want to preserve the value of <code>this</code> from the enclosing lexical context.</li>
+</ul>
+</li>
+</ol>
+<p>Example:</p>
+<pre><code class="lang-javascript hljs "><span class="hljs-comment">// Traditional function expression</span>
+<span class="hljs-keyword">const</span> traditionalFunction = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x, y</span>) </span>{
+  <span class="hljs-keyword">return</span> x + y;
+};
+
+<span class="hljs-comment">// Arrow function</span>
+<span class="hljs-keyword">const</span> arrowFunction = <span class="hljs-function">(<span class="hljs-params">x, y</span>) =&gt;</span> x + y;
+
+<span class="hljs-built_in">console</span>.log(traditionalFunction(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// Output: 5</span>
+<span class="hljs-built_in">console</span>.log(arrowFunction(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>));       <span class="hljs-comment">// Output: 5</span>
+</code></pre>
+<p>In summary, arrow functions provide a concise syntax for writing functions in JavaScript, with lexical <code>this</code> binding and implicit return. They are particularly useful in scenarios where brevity and clarity are important. However, they may not be suitable for all use cases, especially when you need access to <code>this</code> or the <code>arguments</code> object.</p>
+</div></div>
+<br>
+<br>
+<h2>Map, Filter, and Reduce</h2>
+<div class="markdown-container ltr"><div class="markdown-content"><ol>
+<li><p><strong>Map</strong>: The <code>map()</code> method creates a new array by calling a provided function on every element in the calling array. It does not mutate the original array.</p>
+<pre><code class=" hljs "><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+
+<span class="hljs-comment">// Doubling each element in the array</span>
+<span class="hljs-keyword">const</span> doubledNumbers = numbers.map(<span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> num * <span class="hljs-number">2</span>);
+<span class="hljs-built_in">console</span>.log(doubledNumbers); <span class="hljs-comment">// Output: [2, 4, 6, 8, 10]</span>
+</code></pre><pre><code class=" hljs "><span class="hljs-keyword">const</span> books = [
+  { <span class="hljs-attr">title</span>: <span class="hljs-string">'Harry Potter'</span>, <span class="hljs-attr">author</span>: <span class="hljs-string">'J.K. Rowling'</span>, <span class="hljs-attr">pages</span>: <span class="hljs-number">336</span> },
+  { <span class="hljs-attr">title</span>: <span class="hljs-string">'The Lord of the Rings'</span>, <span class="hljs-attr">author</span>: <span class="hljs-string">'J.R.R. Tolkien'</span>, <span class="hljs-attr">pages</span>: <span class="hljs-number">1178</span> },
+  { <span class="hljs-attr">title</span>: <span class="hljs-string">'To Kill a Mockingbird'</span>, <span class="hljs-attr">author</span>: <span class="hljs-string">'Harper Lee'</span>, <span class="hljs-attr">pages</span>: <span class="hljs-number">281</span> }
+];
+
+<span class="hljs-comment">// Create a new array with book titles</span>
+<span class="hljs-keyword">const</span> bookTitles = books.map(<span class="hljs-function"><span class="hljs-params">book</span> =&gt;</span> book.title);
+<span class="hljs-built_in">console</span>.log(bookTitles); <span class="hljs-comment">// Output: ['Harry Potter', 'The Lord of the Rings', 'To Kill a Mockingbird']</span>
+</code></pre><p>In this example, the <code>map()</code> method iterates through each element of the <code>numbers</code> array, applies the provided function (which doubles each element), and returns a new array with the modified elements.</p>
+</li>
+<li><p><strong>Filter</strong>: The <code>filter()</code> method creates a new array with all elements that pass the test implemented by the provided function. It also does not mutate the original array.</p>
+<pre><code class=" hljs "><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+
+<span class="hljs-comment">// Filtering out odd numbers</span>
+<span class="hljs-keyword">const</span> evenNumbers = numbers.filter(<span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> num % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>);
+<span class="hljs-built_in">console</span>.log(evenNumbers); <span class="hljs-comment">// Output: [2, 4]</span>
+</code></pre><pre><code class=" hljs "><span class="hljs-keyword">const</span> students = [
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Alice'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">22</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Bob'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">18</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Charlie'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">25</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'David'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">30</span> }
+];
+
+<span class="hljs-comment">// Filter students who are older than 20</span>
+<span class="hljs-keyword">const</span> olderStudents = students.filter(<span class="hljs-function"><span class="hljs-params">student</span> =&gt;</span> student.age &gt; <span class="hljs-number">20</span>);
+<span class="hljs-built_in">console</span>.log(olderStudents); <span class="hljs-comment">// Output: [{ name: 'Alice', age: 22 }, { name: 'Charlie', age: 25 }, { name: 'David', age: 30 }]</span>
+</code></pre><p>Here, the <code>filter()</code> method iterates through each element of the <code>numbers</code> array, applies the provided function (which checks if the number is even), and returns a new array containing only the elements that pass the test.</p>
+</li>
+<li><p><strong>Reduce</strong>: The <code>reduce()</code> method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value. It can be used to perform any kind of operation on an array and return a single value.</p>
+<pre><code class=" hljs "><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+
+<span class="hljs-comment">// Summing up all elements in the array</span>
+<span class="hljs-keyword">const</span> sum = numbers.reduce(<span class="hljs-function">(<span class="hljs-params">accumulator, currentValue</span>) =&gt;</span> accumulator + currentValue, <span class="hljs-number">0</span>);
+<span class="hljs-built_in">console</span>.log(sum); <span class="hljs-comment">// Output: 15</span>
+</code></pre><pre><code class=" hljs "><span class="hljs-keyword">const</span> orders = [
+  { <span class="hljs-attribute">id:</span><span class="hljs-string"> 1, product</span>: <span class="hljs-string">'Laptop'</span>, <span class="hljs-attribute">price</span>: <span class="hljs-number">1000</span> },
+  { <span class="hljs-attribute">id:</span><span class="hljs-string"> 2, product</span>: <span class="hljs-string">'Smartphone'</span>, <span class="hljs-attribute">price</span>: <span class="hljs-number">500</span> },
+  { <span class="hljs-attribute">id:</span><span class="hljs-string"> 3, product</span>: <span class="hljs-string">'Tablet'</span>, <span class="hljs-attribute">price</span>: <span class="hljs-number">300</span> }
+];
+
+<span class="hljs-comment">// Calculate total revenue from orders</span>
+<span class="hljs-keyword">const</span> totalRevenue = orders.reduce((total, order) =&gt; total + order.price, <span class="hljs-number">0</span>);
+<span class="hljs-built_in">console</span>.log(totalRevenue); <span class="hljs-comment">// Output: 1800</span>
+</code></pre><p>In this example, the <code>reduce()</code> method takes a function with two parameters: an accumulator (which stores the accumulated result) and the current value being processed. It starts with an initial value of 0 (specified as the second argument), then adds each element of the array to the accumulator, returning the final accumulated value.</p>
+</li>
+
+<li><p><strong>Combination of Filter, Map &amp; Reduce</strong> :</p>
+<pre><code class=" hljs ">   <span class="hljs-keyword">const</span> transactions = [
+     { <span class="hljs-attribute">id:</span><span class="hljs-string"> 1, customer</span>: <span class="hljs-string">'Alice'</span>, <span class="hljs-attribute">age</span>: <span class="hljs-number">22</span>, <span class="hljs-attribute">amount</span>: <span class="hljs-number">100</span> },
+     { <span class="hljs-attribute">id:</span><span class="hljs-string"> 2, customer</span>: <span class="hljs-string">'Bob'</span>, <span class="hljs-attribute">age</span>: <span class="hljs-number">25</span>, <span class="hljs-attribute">amount</span>: <span class="hljs-number">200</span> },
+     { <span class="hljs-attribute">id:</span><span class="hljs-string"> 3, customer</span>: <span class="hljs-string">'Charlie'</span>, <span class="hljs-attribute">age</span>: <span class="hljs-number">30</span>, <span class="hljs-attribute">amount</span>: <span class="hljs-number">150</span> },
+     { <span class="hljs-attribute">id:</span><span class="hljs-string"> 4, customer</span>: <span class="hljs-string">'David'</span>, <span class="hljs-attribute">age</span>: <span class="hljs-number">28</span>, <span class="hljs-attribute">amount</span>: <span class="hljs-number">300</span> }
+   ];
+
+   <span class="hljs-comment">// Filter transactions made by customers aged 25 and above</span>
+   <span class="hljs-comment">// Map to get the amounts</span>
+   <span class="hljs-comment">// Reduce to sum up the total amount</span>
+   <span class="hljs-keyword">const</span> totalAmountSpentByOlderCustomers = transactions
+     .filter(transaction =&gt; transaction.age &gt;= <span class="hljs-number">25</span>) <span class="hljs-comment">// Filter</span>
+     .map(transaction =&gt; transaction.amount) <span class="hljs-comment">// Map</span>
+     .reduce((total, amount) =&gt; total + amount, <span class="hljs-number">0</span>); <span class="hljs-comment">// Reduce</span>
+
+   <span class="hljs-built_in">console</span>.log(totalAmountSpentByOlderCustomers); <span class="hljs-comment">// Output: 650 (200 + 150 + 300)</span>
+</code></pre></li></ol></div></div>
+
+<br>
+<br>
+<h2>Mutability and Immutability in JavaScript</h2>
+<div class="markdown-container ltr"><div class="markdown-content"><p>In JavaScript, mutability and immutability refer to whether an object's state can be changed after it's been created.</p>
+<h3 id="mutability-">Mutability:</h3>
+<ol>
+<li><p><strong>Objects:</strong> Objects in JavaScript are mutable, meaning their properties can be changed after they're created.</p>
+<pre><code class="lang-javascript hljs "><span class="hljs-keyword">let</span> obj = { <span class="hljs-attr">name</span>: <span class="hljs-string">'John'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">30</span> };
+obj.age = <span class="hljs-number">31</span>; <span class="hljs-comment">// Mutable</span>
+</code></pre>
+</li>
+<li><p><strong>Arrays:</strong> Arrays are also mutable in JavaScript.</p>
+<pre><code class="lang-javascript hljs "><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+arr.push(<span class="hljs-number">4</span>); <span class="hljs-comment">// Mutable</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="immutability-">Immutability:</h3>
+<ol>
+<li><p><strong>Primitives:</strong> Primitive data types such as strings, numbers, and booleans are immutable.</p>
+<pre><code class="lang-javascript hljs ">let str = <span class="hljs-string">'Hello'</span>;
+str.concat(<span class="hljs-string">' World'</span>); <span class="hljs-regexp">//</span> Immutability - <span class="hljs-string">'Hello'</span> remains unchanged
+</code></pre>
+</li>
+<li><p><strong>Immutable Libraries:</strong> Some libraries and patterns in JavaScript promote immutability, such as using libraries like Immutable.js or functions like <code>Object.freeze()</code>.</p>
+<p><strong>Example with <code>Object.freeze()</code>:</strong></p>
+<pre><code class="lang-javascript hljs ">let obj = Object.freeze({ <span class="hljs-symbol">name:</span> <span class="hljs-string">'John'</span>, <span class="hljs-symbol">age:</span> <span class="hljs-number">30</span> });
+obj.age = <span class="hljs-number">31</span>; <span class="hljs-regexp">//</span> This change will <span class="hljs-keyword">not</span> be allowed <span class="hljs-keyword">in</span> strict mode <span class="hljs-keyword">or</span> throw an error <span class="hljs-keyword">in</span> non-strict mode
+</code></pre>
+<p><strong>Example with Immutable.js:</strong></p>
+<pre><code class="lang-javascript hljs "><span class="hljs-keyword">const</span> { <span class="hljs-built_in">Map</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'immutable'</span>);
+<span class="hljs-keyword">let</span> map1 = <span class="hljs-built_in">Map</span>({ <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">3</span> });
+<span class="hljs-keyword">let</span> map2 = map1.set(<span class="hljs-string">'b'</span>, <span class="hljs-number">50</span>); <span class="hljs-comment">// Returns a new immutable map with the updated value</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="benefits-of-immutability-">Benefits of Immutability:</h3>
+<ol>
+<li><strong>Predictability:</strong> Immutable data structures make code easier to reason about because you don't have to worry about unexpected changes to shared data.</li>
+<li><strong>Concurrency:</strong> In a multi-threaded environment, immutability helps avoid race conditions and data inconsistency issues.</li>
+<li><strong>Performance:</strong> Immutable data structures can be optimized for certain operations, leading to better performance in some cases.</li>
+<li><strong>Debugging:</strong> Immutable data makes debugging easier since you can trace changes more effectively.</li>
+</ol>
+<h3 id="drawbacks-of-immutability-">Drawbacks of Immutability:</h3>
+<ol>
+<li><strong>Memory Overhead:</strong> Immutable data structures often involve creating new copies, which can lead to increased memory usage.</li>
+<li><strong>Performance Trade-offs:</strong> While immutability can improve performance in some scenarios, it may degrade performance in others, especially for large data sets or frequent updates.</li>
+<li><strong>Learning Curve:</strong> Adopting immutable patterns or libraries may require a learning curve for developers accustomed to mutable data structures.</li>
+</ol>
+</div></div>
+<br>
+<br>
+<h2>Destructuring in JavaScript</h2>
+<div class="markdown-container ltr"><div class="markdown-content"><p>Destructuring in JavaScript is a convenient way of extracting multiple values from data stored in arrays or objects, and assigning them to variables in a concise manner. Here are two examples demonstrating destructuring:</p>
+<h3 id="example-1-destructuring-arrays">Example 1: Destructuring Arrays</h3>
+<pre><code class="lang-javascript hljs "><span class="hljs-comment">// Array destructuring</span>
+<span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+
+<span class="hljs-comment">// Destructuring assignment</span>
+<span class="hljs-keyword">const</span> [first, second, ...rest] = numbers;
+
+<span class="hljs-comment">// Using the extracted values</span>
+console.<span class="hljs-built_in">log</span>(first);  <span class="hljs-comment">// Output: 1</span>
+console.<span class="hljs-built_in">log</span>(second); <span class="hljs-comment">// Output: 2</span>
+console.<span class="hljs-built_in">log</span>(rest);   <span class="hljs-comment">// Output: [3, 4, 5]</span>
+</code></pre>
+<p>In this example, an array <code>numbers</code> is destructured into variables <code>first</code>, <code>second</code>, and <code>rest</code>. The first two elements of the array are assigned to <code>first</code> and <code>second</code>, while the rest of the elements are captured in the <code>rest</code> variable using the rest syntax (<code>...</code>).</p>
+<h3 id="example-2-destructuring-objects">Example 2: Destructuring Objects</h3>
+<pre><code class="lang-javascript hljs "><span class="hljs-comment">// Object destructuring</span>
+<span class="hljs-keyword">const</span> person = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'John Doe'</span>,
+  <span class="hljs-attr">age</span>: <span class="hljs-number">30</span>,
+  <span class="hljs-attr">gender</span>: <span class="hljs-string">'male'</span>,
+  <span class="hljs-attr">country</span>: <span class="hljs-string">'USA'</span>
+};
+
+<span class="hljs-comment">// Destructuring assignment</span>
+<span class="hljs-keyword">const</span> { name, age, ...details } = person;
+
+<span class="hljs-comment">// Using the extracted values</span>
+<span class="hljs-built_in">console</span>.log(name);    <span class="hljs-comment">// Output: John Doe</span>
+<span class="hljs-built_in">console</span>.log(age);     <span class="hljs-comment">// Output: 30</span>
+<span class="hljs-built_in">console</span>.log(details); <span class="hljs-comment">// Output: { gender: 'male', country: 'USA' }</span>
+</code></pre>
+<p>Here, an object <code>person</code> is destructured into variables <code>name</code>, <code>age</code>, and <code>details</code>. The <code>name</code> and <code>age</code> properties are assigned to corresponding variables, while the remaining properties are captured in the <code>details</code> object using the rest syntax (<code>...</code>).</p>
+<p>In JavaScript, destructuring assignment can be used not only with arrays and objects but also with other iterable data structures like strings and sets. Here are examples demonstrating destructuring with strings and sets:</p>
+<h3 id="example-3-destructuring-strings-">Example 3: Destructuring Strings:</h3>
+<pre><code class="lang-javascript hljs "><span class="hljs-comment">// String destructuring</span>
+<span class="hljs-keyword">const</span> str = <span class="hljs-string">'hello'</span>;
+
+<span class="hljs-comment">// Destructuring assignment</span>
+<span class="hljs-keyword">const</span> [firstChar, secondChar, ...remainingChars] = str;
+
+<span class="hljs-comment">// Using the extracted values</span>
+<span class="hljs-built_in">console</span>.log(firstChar);       <span class="hljs-comment">// Output: h</span>
+<span class="hljs-built_in">console</span>.log(secondChar);      <span class="hljs-comment">// Output: e</span>
+<span class="hljs-built_in">console</span>.log(remainingChars);  <span class="hljs-comment">// Output: ['l', 'l', 'o']</span>
+</code></pre>
+<p>In this example, a string <code>str</code> is destructured into individual characters using array destructuring.</p>
+<h3 id="example-4-destructuring-sets-">Example 4: Destructuring Sets:</h3>
+<pre><code class="lang-javascript hljs "><span class="hljs-comment">// Set destructuring</span>
+<span class="hljs-keyword">const</span> mySet = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]);
+
+<span class="hljs-comment">// Destructuring assignment</span>
+<span class="hljs-keyword">const</span> [firstElement, secondElement, ...restElements] = mySet;
+
+<span class="hljs-comment">// Using the extracted values</span>
+<span class="hljs-built_in">console</span>.log(firstElement);    <span class="hljs-comment">// Output: 1</span>
+<span class="hljs-built_in">console</span>.log(secondElement);   <span class="hljs-comment">// Output: 2</span>
+<span class="hljs-built_in">console</span>.log(restElements);    <span class="hljs-comment">// Output: [3, 4, 5]</span>
+</code></pre>
+<p>Here, a <code>Set</code> named <code>mySet</code> is destructured into individual elements using array destructuring. Sets are iterables, so they can be destructured just like arrays.</p>
+<p>So, in JavaScript, while arrays and objects are the most commonly used data structures for destructuring, you can also destructure strings, sets, and any other iterable data structures.</p>
+</div></div>
   </body>
 </html>
