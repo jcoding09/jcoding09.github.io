@@ -17,3 +17,7 @@
 #### [Spring Boot notes](https://jcoding09.github.io/sbnotes)
 
 #### [LeetCode Blind 75](https://jcoding09.github.io/LeetCode-75/)
+
+#### [Clod notes](https://jcoding09.github.io/cloud/)
+
+#### [ML notes](https://jcoding09.github.io/ml/)
