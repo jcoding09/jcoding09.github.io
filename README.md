@@ -22,7 +22,7 @@
 
 #### [Cloud notes](https://jcoding09.github.io/cloud/)
 
-#### [ML notes](https://jcoding09.github.io/ml/)
+#### [Artficial Intelligence](https://jcoding09.github.io/AI/)
 
 #### [E-book](https://jcoding09.github.io/book/)
 
